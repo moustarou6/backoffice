@@ -18,11 +18,15 @@ class Configuration
     
 
     // Box BDD
-    public $bddBoxName      = "engine";
-    public $bddBoxLogin     = "planetProjet";
-    public $bddBoxPassword  = "mika123";
+    public $bddEngineName      = "engine";
+    public $bddEngineLogin     = "planetProjet";
+    public $bddEnginePassword  = "mika123";
 
-      
+    
+        // SMTP
+    public $smtpName          = 'appiswap.com';
+    public $smtpLogin         = 'contact@appiswap.com';
+    public $smtpPaswword      = 'e2e9e';
     
     public function __construct() 
     {
