@@ -47,8 +47,6 @@ if(isset($login) && isset($password) && isset($email))
           'cache' => false
         ));
 
-       
-
 		$mailer = Swift_Mailer::newInstance($transport);
         $message = Swift_Message::newInstance();
         $message->setSubject($subject);
@@ -75,10 +73,7 @@ if(isset($login) && isset($password) && isset($email))
 	{
 		$_tabResult["status"] = "error"; 
     	$_tabResult["result"] = "user exist";
-	}
-
-	
-	
+	}	
 }
 else
 {
@@ -86,8 +81,6 @@ else
     $_tabResult["result"] = "missing params";
 	
 }
-
-
 
 echo json_encode($_tabResult);
 

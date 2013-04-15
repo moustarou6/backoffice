@@ -25,6 +25,18 @@
 			rewrite('./user/login.php');
 			break;
 
+		case 'user/update' :
+		case 'user/update/' :
+			rewrite('./user/update.php');
+			break;
+
+		case 'portal/list' :
+		case 'portal/list/' :
+			rewrite('./portals/list.php');
+			break;
+
+
+
 	}
 	
 	
