@@ -35,8 +35,10 @@
 			rewrite('./portals/list.php');
 			break;
 
-
-
+			case 'spaceship/list' :
+		case 'spaceship/list/' :
+			rewrite('./spaceship/list.php');
+			break;
 	}
 	
 	

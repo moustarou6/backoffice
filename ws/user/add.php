@@ -10,10 +10,10 @@ $login 		= $_POST['login'];
 $password 	= $_POST['password'];
 $email 		= $_POST['email'];
 
-$login 			= "mikda";
+/*$login 			= "mikda";
 $email			= "mickael.hamour@gmail.com";
 $password       = "mika123";
-
+*/
 if(isset($login) && isset($password) && isset($email))
 {
 	$conf 			= new Configuration();
@@ -27,8 +27,8 @@ if(isset($login) && isset($password) && isset($email))
 		$sql = "INSERT INTO users (login,password,email,credit) VALUES ('".$login."','".md5($password)."','".$email."',300)";
 		$connexion->ExecuteSQL($sql);
 
-		$subject 	= "Game";
-		$from 		= "mimi@toto.fr";
+		/*$subject 	= "Game";
+		$from 		= "game@appiswap.com";
 		$extra = array(
 			'login'		=>$login,
 			'email'		=> $email,
@@ -63,7 +63,7 @@ if(isset($login) && isset($password) && isset($email))
 		$type->setParameter('charset', 'utf-8');
 	   
 	    $result = $mailer->send($message);	
-
+	*/
 		
 		$_tabResult["status"] = "ok"; 
     	$_tabResult["result"] = "ok";
