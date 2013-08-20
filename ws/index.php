@@ -30,14 +30,30 @@
 			rewrite('./user/update.php');
 			break;
 
+		case 'user/buy' :
+		case 'user/buy/' :
+			rewrite('./user/buy.php');
+			break;
+
+
 		case 'portal/list' :
 		case 'portal/list/' :
 			rewrite('./portals/list.php');
 			break;
 
-			case 'spaceship/list' :
+		case 'spaceship/list' :
 		case 'spaceship/list/' :
 			rewrite('./spaceship/list.php');
+			break;
+		
+		case 'score/list' :
+		case 'score/list/' :
+			rewrite('./score/list.php');
+			break;
+			
+		case 'spaceship/change' :
+		case 'spaceship/change/' :
+			rewrite('./spaceship/change.php');
 			break;
 	}
 	

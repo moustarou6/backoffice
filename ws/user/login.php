@@ -5,8 +5,8 @@ include_once(__DIR__.'/../utils/Configuration.php');
 
 $login 		= $_POST['login'];
 $password 	= $_POST['password'];
-$login = "mikda";
-$password = "mika123";
+//$login = "mikda";
+//$password = "mika123";
 
 if(isset($password) && isset($login))
 {
@@ -18,12 +18,16 @@ if(isset($password) && isset($login))
 	if(count($resultUser)> 0 )
 	{
 		$user = array(
-			'id'		=> $resultUser[0]['id'],
-			'credit' 	=> $resultUser[0]['credit'],
-			'login'		=> $resultUser[0]['login']
+			'id'				=> $resultUser[0]['id'],
+			'credit' 			=> $resultUser[0]['credit'],
+			'login'				=> $resultUser[0]['login'],
+			'iridium'			=> $resultUser[0]['iridium'],
+			'deuterium'			=> $resultUser[0]['deuterium'],
+			'belium'			=> $resultUser[0]['belium'],
+			'score'				=> $resultUser[0]['score'],
 		);
 
-		$sql = "SELECT user_spaceship.id as user_spaceship_id, spaceship.path as path,spaceship.name as name, spaceship.power as power, user_spaceship.life,user_spaceship.position_X,user_spaceship.position_Y,user_spaceship.position_Z 
+		$sql = "SELECT user_spaceship.id as user_spaceship_id,spaceship.id as id, spaceship.path as path,spaceship.name as name, spaceship.power as power, user_spaceship.life,user_spaceship.position_X,user_spaceship.position_Y,user_spaceship.position_Z 
 		FROM user_spaceship as user_spaceship 
 		INNER JOIN spaceship as spaceship
 		ON user_spaceship.spaceship_id = spaceship.id
@@ -34,14 +38,15 @@ if(isset($password) && isset($login))
 		
 		foreach ($result as $key => $value) {
 			$spaceship[] = array(
-				'id' => $value['user_spaceship_id'],
-				'path' 	=> $value['path'],
-				'name' 	=> $value['name'],
-				'power'	=> $value['power'],
-				'life' 	=> $value['life'],
-				'position_X'	 	=> $value['position_X'],
-				'position_Y'	 	=> $value['position_Y'],
-				'position_Z'	 	=> $value['position_Z'],
+				'id' 					=> $value['id'],
+				'user_spaceship_id' 		=> $value['user_spaceship_id'],
+				'path' 				=> $value['path'],
+				'name' 				=> $value['name'],
+				'power'				=> $value['power'],
+				'life' 					=> $value['life'],
+				'position_X'	 			=> $value['position_X'],
+				'position_Y'	 			=> $value['position_Y'],
+				'position_Z'	 			=> $value['position_Z'],
 				);
 		}
 
